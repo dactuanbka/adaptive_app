@@ -98,7 +98,7 @@ class _MyApp extends State<MyApp> {
     // final bool hasFocus = focusNode.hasFocus;
     return Container(
       width: 300,
-      height: 50,
+      height: 40,
       child: const TextField(
         keyboardType: TextInputType.number,
         autofocus: true,
@@ -128,7 +128,7 @@ class _MyApp extends State<MyApp> {
   password() {
     return Container(
       width: 300,
-      height: 50,
+      height: 40,
       child: TextField(
           obscureText: _passwordVisible,
           autocorrect: true,
