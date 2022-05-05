@@ -128,31 +128,7 @@ class _registerAccount extends State<registerAccount> {
                           style: TextStyle(fontSize: 16, color: Colors.white)),
                       margin: const EdgeInsets.only(left: 30, right: 30),
                     ),
-                    Container(
-                      height: 60,
-                      child: const TextField(
-                        maxLength: 100,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white70,
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            borderSide: BorderSide(
-                              width: 3,
-                              color: Colors.deepOrangeAccent,
-                            ),
-                          ),
-                          hintText: 'Xác nhận lại mật khẩu',
-                          hintStyle: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      margin: const EdgeInsets.only(
-                        left: 30,
-                        right: 30,
-                      ),
-                    ),
+                    Container_Text_Field("Nhaapj lai mat khau"),
                     Container(
                       height: 60,
                       child: const TextField(
@@ -201,6 +177,33 @@ class _registerAccount extends State<registerAccount> {
     );
   }
 
+  Container_Text_Field(String content) {
+    return Container(
+      height: 65,
+      child: TextField(
+        maxLength: 100,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white70,
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(
+              width: 3,
+              color: Colors.deepOrangeAccent,
+            ),
+          ),
+          hintText: content,
+          hintStyle: const TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      margin: const EdgeInsets.only(
+        left: 30,
+        right: 30,
+      ),
+    );
+  }
 
   sex? _character = sex.Male;
 
@@ -249,6 +252,29 @@ class _registerAccount extends State<registerAccount> {
   }
 }
 
+// extension TF on TextField {
+//   TextField customTF(bool content) {
+//     return TextField(
+//       maxLength: 100,
+//       decoration: InputDecoration(
+//         filled: true,
+//         fillColor: Colors.white70,
+//         enabledBorder: OutlineInputBorder(
+//           borderRadius: BorderRadius.all(Radius.circular(10)),
+//           borderSide: BorderSide(
+//             width: 3,
+//             color: Colors.deepOrangeAccent,
+//           ),
+//         ),
+//         hintText: content ? "" : "",
+//         hintStyle: TextStyle(
+//           color: Colors.black,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class DismissKeyboard extends StatelessWidget {
   final Widget child;
 
@@ -268,37 +294,31 @@ class DismissKeyboard extends StatelessWidget {
     );
   }
 }
-class Container_Text_Field extends StatelessWidget{
-  String content = "";
 
-  Container_Text_Field({Key? key, required this.content}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 65,
-      child: const TextField(
-        maxLength: 100,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white70,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            borderSide: BorderSide(
-              width: 3,
-              color: Colors.deepOrangeAccent,
-            ),
-          ),
-          hintText: 'content',
-          hintStyle: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-      ),
-      margin: const EdgeInsets.only(
-        left: 30,
-        right: 30,
-      ),
-    );
-  }
-}
+// Container_Text_Field(String content) {
+//   return Container(
+//     height: 65,
+//     child: const TextField(
+//       maxLength: 100,
+//       decoration: InputDecoration(
+//         filled: true,
+//         fillColor: Colors.white70,
+//         enabledBorder: OutlineInputBorder(
+//           borderRadius: BorderRadius.all(Radius.circular(10)),
+//           borderSide: BorderSide(
+//             width: 3,
+//             color: Colors.deepOrangeAccent,
+//           ),
+//         ),
+//         hintText: 'content',
+//         hintStyle: TextStyle(
+//           color: Colors.black,
+//         ),
+//       ),
+//     ),
+//     margin: const EdgeInsets.only(
+//       left: 30,
+//       right: 30,
+//     ),
+//   );
+// }
