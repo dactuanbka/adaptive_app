@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'main.dart';
 
 void main() {
@@ -55,105 +56,11 @@ class _registerAccount extends State<registerAccount> {
                         ),
                       ],
                     ),
-                    Container(
-                      height: 60,
-                      child: const TextField(
-                        maxLength: 100,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white70,
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            borderSide: BorderSide(
-                              width: 3,
-                              color: Colors.deepOrangeAccent,
-                            ),
-                          ),
-                          hintText: 'Họ và Tên',
-                          hintStyle: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      margin: const EdgeInsets.only(left: 30, right: 30),
-                    ),
-                    Container(
-                      height: 60,
-                      child: const TextField(
-                        maxLength: 100,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white70,
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            borderSide: BorderSide(
-                              width: 3,
-                              color: Colors.deepOrangeAccent,
-                            ),
-                          ),
-                          hintText: 'Số điện thoại',
-                          hintStyle: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      margin: const EdgeInsets.only(
-                        left: 30,
-                        right: 30,
-                      ),
-                    ),
-                    Container(
-                      height: 60,
-                      child: const TextField(
-                          maxLength: 100,
-                          obscureText: true,
-                          autocorrect: true,
-                          textAlign: TextAlign.left,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white70,
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                width: 3,
-                                color: Colors.deepOrangeAccent,
-                              ),
-                            ),
-                            hintText: 'Mật khẩu',
-                            hintStyle: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                          style: TextStyle(fontSize: 16, color: Colors.white)),
-                      margin: const EdgeInsets.only(left: 30, right: 30),
-                    ),
-                    Container_Text_Field("Nhaapj lai mat khau"),
-                    Container(
-                      height: 60,
-                      child: const TextField(
-                        maxLength: 100,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white70,
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            borderSide: BorderSide(
-                              width: 3,
-                              color: Colors.deepOrangeAccent,
-                            ),
-                          ),
-                          hintText: 'Email',
-                          hintStyle: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      margin: const EdgeInsets.only(
-                        left: 30,
-                        right: 30,
-                      ),
-                    ),
+                    Container_Text_Field("Họ và Tên"),
+                    Container_Text_Field_PhonnNumber("Số điện Thoại"),
+                    Container_Text_Field("Mật khẩu"),
+                    Container_Text_Field("Nhập lại mật khẩu"),
+                    Container_Text_Field("Email"),
                     Row(
                       children: <Widget>[
                         Container(
@@ -206,7 +113,6 @@ class _registerAccount extends State<registerAccount> {
   }
 
   sex? _character = sex.Male;
-
   RadioButton(String s, sex se) {
     return Expanded(
       child: Container(
@@ -248,6 +154,35 @@ class _registerAccount extends State<registerAccount> {
             'Đăng Ký',
             style: TextStyle(fontSize: 24, color: Colors.white),
           )),
+    );
+  }
+
+  Container_Text_Field_PhonnNumber(String s) {
+    return Container(
+      height: 60,
+      child: const TextField(
+        keyboardType: TextInputType.number,
+        maxLength: 20,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white70,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(
+              width: 3,
+              color: Colors.deepOrangeAccent,
+            ),
+          ),
+          hintText: 'Số điện thoại',
+          hintStyle: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      margin: const EdgeInsets.only(
+        left: 30,
+        right: 30,
+      ),
     );
   }
 }
@@ -295,30 +230,3 @@ class DismissKeyboard extends StatelessWidget {
   }
 }
 
-// Container_Text_Field(String content) {
-//   return Container(
-//     height: 65,
-//     child: const TextField(
-//       maxLength: 100,
-//       decoration: InputDecoration(
-//         filled: true,
-//         fillColor: Colors.white70,
-//         enabledBorder: OutlineInputBorder(
-//           borderRadius: BorderRadius.all(Radius.circular(10)),
-//           borderSide: BorderSide(
-//             width: 3,
-//             color: Colors.deepOrangeAccent,
-//           ),
-//         ),
-//         hintText: 'content',
-//         hintStyle: TextStyle(
-//           color: Colors.black,
-//         ),
-//       ),
-//     ),
-//     margin: const EdgeInsets.only(
-//       left: 30,
-//       right: 30,
-//     ),
-//   );
-// }

@@ -1,3 +1,4 @@
+import 'package:adaptive_app/forgotPassword_Dialog.dart';
 import 'package:adaptive_app/main.dart';
 import 'package:flutter/material.dart';
 
@@ -99,7 +100,7 @@ class _MyApp extends State<MyApp> {
     // final bool hasFocus = focusNode.hasFocus;
     return Container(
       width: 300,
-      height: 50,
+      height: 70,
       child: const TextField(
         maxLength: 20,
         keyboardType: TextInputType.number,
@@ -113,7 +114,7 @@ class _MyApp extends State<MyApp> {
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               width: 3,
-              color: Colors.cyanAccent,
+              color: Colors.deepOrangeAccent,
             ),
           ),
           hintText: 'Số điện thoại',
@@ -142,7 +143,7 @@ class _MyApp extends State<MyApp> {
               borderRadius: BorderRadius.all(Radius.circular(10)),
               borderSide: BorderSide(
                 width: 3,
-                color: Colors.cyanAccent,
+                color: Colors.deepOrangeAccent,
               ),
             ),
             hintText: 'Mật khẩu',
@@ -188,7 +189,9 @@ class _MyApp extends State<MyApp> {
     return Expanded(
       child: Container(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            showForgotDialog();
+          },
           child: const Text(
             'Forgot password ?',
             style: TextStyle(color: Colors.white),
@@ -201,10 +204,16 @@ class _MyApp extends State<MyApp> {
   }
 
   buttonLogin() {
-    return ElevatedButton(
+    return
+      Container(
+        height:40,
+        child:ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.amber,
+          primary: Colors.deepOrangeAccent,
           onPrimary: Colors.cyanAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          )
         ),
         onPressed: () {
           Navigator.push(
@@ -214,12 +223,27 @@ class _MyApp extends State<MyApp> {
         },
         child: const Text(
           'Đăng nhập',
-          style: TextStyle(fontSize: 25, color: Colors.white),
-        ));
+          style: TextStyle(fontSize: 24, color: Colors.white),
+        ),
+        ),
+      );
   }
 
   labelcheckBox() {
     return const Text("Remember me", style: TextStyle(color: Colors.white));
+  }
+
+  void showForgotDialog() {
+    showGeneralDialog(
+        barrierDismissible: true,
+        barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        transitionDuration: const Duration(milliseconds: 200),
+        context: context,
+        pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondaryAnimation) {
+          return const forgot_Dialog();
+        },
+    );
   }
 }
 
